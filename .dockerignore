@@ -1,15 +1,11 @@
-# Игнорируем всё, кроме нужного
-**
+# Ignore development files and directories
+.git
+.vscode
+node_modules/
+*.log
+tmp/
 
-# Разрешаем только исходники и go-файлы
-!**/*.go
-!go.mod
-!go.sum
-
-# Игнорируем локальные бинарники (они создаются при go build)
-!bin/
-bin/*
-
-# Игнорируем скрытые файлы и директории
-!.gitignore
-!.dockerignore
+# Ignore build artifacts and secrets
+dist/
+build/
+.env
