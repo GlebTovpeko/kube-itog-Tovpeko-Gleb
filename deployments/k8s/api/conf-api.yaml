@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: conf-api
+  namespace: sirius
+data:
+  APP_NAME: "Main app"
+  LOG_LEVEL: "INFO"
+  BIND_PORT: "8080"
