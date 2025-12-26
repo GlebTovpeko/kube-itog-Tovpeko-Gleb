@@ -15,17 +15,17 @@ tasks:
 
   build:
     cmds:
-      - docker build -f ./cmd/api-service/Dockerfile -t gleb1337/appapi:latest .
-      - docker build -f ./cmd/info-service/Dockerfile -t gleb1337/appinfo:latest .
-      - docker build -f ./cmd/login-service/Dockerfile -t gleb1337/applogin:latest .
-      - docker build -f ./cmd/root-service/Dockerfile -t gleb1337/root-app:latest .
-  
+      - docker build -f ./cmd/api-service/Dockerfile -t ${{ env.DOCKER_USERNAME }}/appapi:latest .
+      - docker build -f ./cmd/info-service/Dockerfile -t ${{ env.DOCKER_USERNAME }}/appinfo:latest .
+      - docker build -f ./cmd/login-service/Dockerfile -t ${{ env.DOCKER_USERNAME }}/applogin:latest .
+      - docker build -f ./cmd/root-service/Dockerfile -t ${{ env.DOCKER_USERNAME }}/root-app:latest .
+
   push:
     cmds:
-      - docker push gleb1337/appapi:latest 
-      - docker push gleb1337/appinfo:latest 
-      - docker push gleb1337/applogin:latest 
-      - docker push gleb1337/root-app:latest 
+      - docker push ${{ env.DOCKER_USERNAME }}/appapi:latest 
+      - docker push ${{ env.DOCKER_USERNAME }}/appinfo:latest 
+      - docker push ${{ env.DOCKER_USERNAME }}/applogin:latest 
+      - docker push ${{ env.DOCKER_USERNAME }}/root-app:latest 
 
   deploy:
     cmds:
