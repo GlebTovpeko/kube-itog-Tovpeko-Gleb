@@ -6,4 +6,4 @@ metadata:
 data:
   LOGIN_APP_NAME: "LOGIN"
   LOG_LEVEL: "INFO"
-  BIND_PORT: "8080"
+  LOGIN_BIND_PORT: "8080"

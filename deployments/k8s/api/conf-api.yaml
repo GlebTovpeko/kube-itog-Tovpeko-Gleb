@@ -6,4 +6,4 @@ metadata:
 data:
   API_APP_NAME: "API"
   LOG_LEVEL: "INFO"
-  BIND_PORT: "8080"
+  API_BIND_PORT: "8080"
