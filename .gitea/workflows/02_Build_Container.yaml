@@ -1,0 +1,65 @@
+name: Build_Container
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_USERNAME: ${{ vars.DOCKER_USERNAME }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.25.4"
+
+      # --- Сборка и пуш root-service ---
+      - name: Build and push root-service
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./cmd/root-service/Dockerfile
+          push: true
+          tags: |
+            ${{ env.DOCKER_USERNAME }}/api-root:latest
+            ${{ env.DOCKER_USERNAME }}/api-root:1.0.1
+
+      # --- Сборка и пуш api-service ---
+      - name: Build and push api-service
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./cmd/api-service/Dockerfile
+          push: true
+          tags: |
+            ${{ env.DOCKER_USERNAME }}/api-service:latest
+            ${{ env.DOCKER_USERNAME }}/api-service:1.0.1
+
+      # --- Сборка и пуш info-service ---
+      - name: Build and push info-service
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./cmd/info-service/Dockerfile
+          push: true
+          tags: |
+            ${{ env.DOCKER_USERNAME }}/api-info:latest
+            ${{ env.DOCKER_USERNAME }}/api-info:1.0.1
+
+      # --- Сборка и пуш login-service ---
+      - name: Build and push login-service
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./cmd/login-service/Dockerfile
+          push: true
+          tags: |
+            ${{ env.DOCKER_USERNAME }}/api-login:latest
+            ${{ env.DOCKER_USERNAME }}/api-login:1.0.1

@@ -4,6 +4,6 @@ metadata:
   name: conf-info
   namespace: sirius
 data:
-  APP_NAME: "Info"
+  INFO_APP_NAME: "INFO"
   LOG_LEVEL: "INFO"
   BIND_PORT: "8080"

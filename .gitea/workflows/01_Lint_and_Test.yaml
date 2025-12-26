@@ -1,0 +1,32 @@
+name: Test and Lint Go Code
+
+on:
+  push:
+    paths:
+      - '**.go'
+      - 'go.mod'
+  pull_request:
+    paths:
+      - '**.go'
+      - 'go.mod'
+
+jobs:
+  test_golang:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.25.4"
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v8
+        with:
+          version: v2.6
+          args: --timeout=5m
+
+      - name: Run Go tests
+        run: go test -v ./...

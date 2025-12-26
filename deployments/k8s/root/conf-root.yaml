@@ -4,5 +4,5 @@ metadata:
   name: root-conf
   namespace: sirius
 data:
-  ROOT_APP_NAME: "root"
+  ROOT_APP_NAME: "ROOT"
   ROOT_BIND_PORT: "8080"

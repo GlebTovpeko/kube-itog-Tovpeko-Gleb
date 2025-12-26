@@ -4,6 +4,6 @@ metadata:
   name: conf-login 
   namespace: sirius
 data:
-  APP_NAME: "login"
+  LOGIN_APP_NAME: "LOGIN"
   LOG_LEVEL: "INFO"
   BIND_PORT: "8080"
