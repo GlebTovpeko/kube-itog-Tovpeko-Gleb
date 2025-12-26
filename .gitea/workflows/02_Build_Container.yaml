@@ -69,3 +69,6 @@ jobs:
           tags: |
             ${{ env.DOCKER_USERNAME }}/api-login:latest
             ${{ env.DOCKER_USERNAME }}/api-login:1.0.1
+      
+      - name: Job status
+        run: echo "Job's status >> ${{ job.status }}."
