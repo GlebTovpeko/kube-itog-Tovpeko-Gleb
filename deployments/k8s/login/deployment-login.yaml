@@ -4,6 +4,7 @@ metadata:
   name: login-app
   namespace: sirius
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: login-app

@@ -4,6 +4,7 @@ metadata:
   name: info-app
   namespace: sirius
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: info-app
