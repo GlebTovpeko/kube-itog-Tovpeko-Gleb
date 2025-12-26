@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: appinfo
-          image: appinfo:latest
+          image: gleb1337/appinfo:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:

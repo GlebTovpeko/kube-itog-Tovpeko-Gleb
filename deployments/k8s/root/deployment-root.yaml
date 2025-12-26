@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: root-app
-          image: root-app:latest
+          image: gleb1337/root-app:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:

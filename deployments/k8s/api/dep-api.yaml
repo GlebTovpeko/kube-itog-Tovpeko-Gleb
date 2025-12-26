@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: appapi
-          image: appapi:latest
+          image: gleb1337/appapi:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:

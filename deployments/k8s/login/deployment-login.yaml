@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: applogin
-          image: applogin:latest
+          image: gleb1337/applogin:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:
