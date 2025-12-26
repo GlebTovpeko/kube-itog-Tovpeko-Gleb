@@ -4,7 +4,7 @@ metadata:
   name: login-service
 spec:
   selector:
-    app: login
+    app: login-app
   ports:
   - port: 80
     targetPort: 8080

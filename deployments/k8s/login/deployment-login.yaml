@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: login
+  name: login-app
   namespace: sirius
 spec:
   selector:
     matchLabels:
-      app: login
+      app: login-app
   template:
     metadata:
       labels:
-        app: login
+        app: login-app
     spec:
       containers:
-        - name: applogin
-          image: gleb1337/applogin:latest
+        - name: login-app
+          image: gleb1337/login-app:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:

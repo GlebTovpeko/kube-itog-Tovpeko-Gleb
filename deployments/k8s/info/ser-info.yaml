@@ -4,7 +4,7 @@ metadata:
   name: info-service
 spec:
   selector:
-    app: info
+    app: info-app
   ports:
   - port: 80
     targetPort: 8080

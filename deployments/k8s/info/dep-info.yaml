@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: info
+  name: info-app
   namespace: sirius
 spec:
   selector:
     matchLabels:
-      app: info
+      app: info-app
   template:
     metadata:
       labels:
-        app: info
+        app: info-app
     spec:
       containers:
-        - name: appinfo
-          image: gleb1337/appinfo:latest
+        - name: info-app
+          image: gleb1337/info-app:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:
